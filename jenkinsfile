@@ -2,8 +2,7 @@
 pipeline {
     agent {
         label 'WindowsNode'
-                pipe = load 'myfile.groovy'
-                pipe.main()
+
     }
     stages {
         stage('Checkout') {
@@ -25,6 +24,8 @@ pipeline {
                     }
  
                     println(env.PATH)
+                    pipe = load 'myfile.groovy'
+                   pipe.Closure()
                   
                }
             }
