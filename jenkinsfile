@@ -4,6 +4,10 @@ pipeline {
         label 'WindowsNode'
 
     }
+    node {
+         pipe = load 'myfile.groovy'
+         pipe.myClosure()
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -24,8 +28,7 @@ pipeline {
                     }
  
                     println(env.PATH)
-                    pipe = load 'myfile.groovy'
-                   pipe.Closure()
+                   
                   
                }
             }
