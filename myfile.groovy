@@ -1,8 +1,12 @@
-class Main {                                    
+class Demo {                                    
     static void main(String... args) {          
-        println 'Groovy world!'
+              myClosure()         
+    }
+     static def myClosure() {
+       println "My First Closure" 
+       println 'Groovy world!'
         println("Hellow World")
         println("I'm Good")
-        println("How are you")                 
+        println("How are you")     
     }
 }
