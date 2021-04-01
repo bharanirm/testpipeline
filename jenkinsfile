@@ -59,7 +59,8 @@ pipeline {
                 }                                
             }                           
         } 
-        
+        def pipeline = load 'myfile.groovy'
+        pipeline.pipeline()
      
         }
     } 
