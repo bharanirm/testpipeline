@@ -60,7 +60,7 @@ pipeline {
                     srcStream.close()
                     dstStream.close()    
                     */ 
-                    def pipe = load 'groovy-file-name.groovy'
+                    def pipe = load 'myfile.groovy'
                     pipe.pipe()
 
                 }                                
