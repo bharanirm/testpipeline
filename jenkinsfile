@@ -21,8 +21,7 @@ pipeline {
                     }
  
                     println(env.PATH)
-                     def pipe = load 'myfile.groovy'
-                        pipe.pipe()
+                  
                }
             }
         }
@@ -31,7 +30,9 @@ pipeline {
                 script{  
                     def sourceFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\"
                     def destinationFolder = "D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\" 
-                  bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")   
+                    bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")  
+                    def pipe = load 'myfile.groovy'
+                    pipe.pipe() 
                 /*  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir") */
                  /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
                     File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
