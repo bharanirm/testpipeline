@@ -1,0 +1,65 @@
+
+pipeline {
+    agent {
+        label 'WindowsNode'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                
+                    git url: 'https://github.com/bharanirm/gitjenkinsintegration.git', branch: 'master', credentialsId: '6153a06b50ce4c3cf2b0317abcb88c92e8a4adb4'
+                
+            }
+        }
+        stage('Env Testing') {
+            /* agent { label 'WindowsNode' } */
+            steps {
+               script {
+                   def fields = env.getEnvironment()
+                   fields.each {
+                        key, value -> println("${key} = ${value}");
+                    }
+ 
+                    println(env.PATH)
+               }
+            }
+        }
+        stage('Copy Files'){                         
+         steps{  
+                script{  
+                    def sourceFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\"
+                    def destinationFolder = "D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\" 
+                  bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")   
+                /*  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir") */
+                 /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
+                    File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
+                    File[] listOfFiles = sourceFolder.listFiles();
+                    echo "Files Total: " + listOfFiles.length;  
+
+                    for (File file : listOfFiles) {
+                        if (file.isFile()) {
+                            echo file.getName()                                                                
+                            Files.copy(Paths.get(file.path), Paths.get("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy"));                                   
+                        }
+                    }     */
+                  /*  fileOperations([fileCopyOperation(
+                    excludes: '',
+                    flattenFiles: false,
+                    includes: "D:\\Bharani\\Projects\\gitjenkins\\app\\**",
+                    targetLocation: "D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy\\**")]) 
+                    */
+                  /*  fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: 'D:\\Bharani\\Projects\\gitjenkins\\app\\**', targetLocation: 'D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\')]) */
+
+                   /* def srcStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\**").newDataInputStream()
+                    def dstStream = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy").newDataOutputStream()
+                    dstStream << srcStream
+                    srcStream.close()
+                    dstStream.close()    
+                    */   
+                }                                
+            }                           
+        } 
+        
+     
+        }
+    } 
