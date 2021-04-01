@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 
-                    git url: 'https://github.com/bharanirm/gitjenkinsintegration.git', branch: 'master', credentialsId: '6153a06b50ce4c3cf2b0317abcb88c92e8a4adb4'
+                    git url: 'https://github.com/bharanirm/testpipeline.git', branch: 'master', credentialsId: '6153a06b50ce4c3cf2b0317abcb88c92e8a4adb4'
                        
             }
         }
@@ -38,7 +38,7 @@ pipeline {
                     def sourceFolder = "D:\\Bharani\\Projects\\testpipeline\\app\\"
                     def destinationFolder = "D:\\Bharani\\Projects\\testpipeline\\appdeploy\\" 
                     bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")  
-                         def util = load("myfile.groovy")
+                         def util = load("${env.WORKSPACE}/myfile.groovy")
                     
                 /*  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir") */
                  /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
