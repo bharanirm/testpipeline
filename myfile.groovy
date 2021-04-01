@@ -1,5 +1,5 @@
 class Demo {                                    
-    static void main(String... args) {          
+    public void main(String... args) {          
               myClosure()         
     }
      static def myClosure() {

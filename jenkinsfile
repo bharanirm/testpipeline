@@ -39,7 +39,7 @@ pipeline {
                     def destinationFolder = "D:\\Bharani\\Projects\\testpipeline\\appdeploy\\" 
                     bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")  
                          def util = load("myfile.groovy")
-                    util.myClosure()
+                    util.myClosure("test")
                 /*  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir") */
                  /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
                     File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
