@@ -30,8 +30,8 @@ pipeline {
         stage('Copy Files'){                         
          steps{  
                 script{  
-                    def sourceFolder = "D:\\Bharani\\Projects\\gitjenkins\\app\\"
-                    def destinationFolder = "D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\" 
+                    def sourceFolder = "D:\\Bharani\\Projects\\testpipeline\\app\\"
+                    def destinationFolder = "D:\\Bharani\\Projects\\testpipeline\\appdeploy\\" 
                     bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")  
              
                 /*  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir") */
@@ -60,7 +60,7 @@ pipeline {
                     srcStream.close()
                     dstStream.close()    
                     */ 
-                      
+
                 }                                
             }                           
         } 
