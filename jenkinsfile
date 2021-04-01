@@ -20,8 +20,8 @@ pipeline {
             /* agent { label 'WindowsNode' } */
             steps {
                script {
-         pipe = load 'myfile.groovy'
-         pipe.myClosure()
+         pipeline = load 'myfile.groovy'
+         pipepline.myClosure()
                    def fields = env.getEnvironment()
                    fields.each {
                         key, value -> println("${key} = ${value}");
