@@ -11,18 +11,13 @@ pipeline {
                        
             }
         }
-        stage('Groovy Execution'){
-            steps{
-                script{
-                   def pipe = load 'myfile.groovy'
-                    pipe.pipe() 
-                }
-            }
-        }
+       
         stage('Env Testing') {
             /* agent { label 'WindowsNode' } */
             steps {
                script {
+                   def pipe = load 'myfile.groovy'
+                    pipe.pipe() 
                    def fields = env.getEnvironment()
                    fields.each {
                         key, value -> println("${key} = ${value}");
