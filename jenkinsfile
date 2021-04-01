@@ -2,6 +2,8 @@
 pipeline {
     agent {
         label 'WindowsNode'
+                pipe = load 'myfile.groovy'
+                pipe.main()
     }
     stages {
         stage('Checkout') {
@@ -60,13 +62,8 @@ pipeline {
                     srcStream.close()
                     dstStream.close()    
                     */ 
-                    def pipe = load 'myfile.groovy'
-                    pipe.pipe()
-
-                }                                
+                 }                                
             }                           
         } 
-
-     
-        }
+         }
     } 
