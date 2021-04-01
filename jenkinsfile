@@ -16,8 +16,7 @@ pipeline {
             /* agent { label 'WindowsNode' } */
             steps {
                script {
-                   def pipe = load 'myfile.groovy'
-                    pipe.pipe() 
+
                    def fields = env.getEnvironment()
                    fields.each {
                         key, value -> println("${key} = ${value}");
@@ -60,7 +59,8 @@ pipeline {
                     dstStream << srcStream
                     srcStream.close()
                     dstStream.close()    
-                    */   
+                    */ 
+                      
                 }                                
             }                           
         } 
