@@ -8,7 +8,8 @@ pipeline {
             steps {
                 
                     git url: 'https://github.com/bharanirm/gitjenkinsintegration.git', branch: 'master', credentialsId: '6153a06b50ce4c3cf2b0317abcb88c92e8a4adb4'
-                
+                      def pipe = load 'myfile.groovy'
+                        pipe.pipe()  
             }
         }
         stage('Env Testing') {
@@ -59,8 +60,7 @@ pipeline {
                 }                                
             }                           
         } 
-        def pipeline = load 'myfile.groovy'
-        pipeline.pipeline()
+
      
         }
     } 
