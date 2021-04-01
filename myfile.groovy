@@ -3,7 +3,7 @@ class Demo {
               myClosure()         
     }
      static def myClosure() {
-   
+        println("Welcome to Jenkins")
         println("Hellow World")
         println("I'm Good")
         println("How are you") 
