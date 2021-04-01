@@ -67,12 +67,16 @@ pipeline {
                     */ 
                  }                                
             } 
-                        steps {
+                                      
+        } 
+        stage{
+             steps {
                 script {
                     def util = load("myfile.groovy")
                     util.myClosure()
                 }
-            }                          
-        } 
+            }           
+        }
+
          }
     } 
