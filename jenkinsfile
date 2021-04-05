@@ -40,7 +40,7 @@ pipeline {
                   /*  def jsont = load 'githubjson.groovy' */
                     code = load 'myfile.groovy'
                     code.example1()
-                    code.example2() 
+                    
                  
                     
 
@@ -76,6 +76,11 @@ pipeline {
             } 
                                       
         } 
+        stage {
+            script {
+                code.example2() 
+            }
+        }
               
     }
        
