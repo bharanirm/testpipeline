@@ -37,10 +37,11 @@ pipeline {
                     def destinationFolder = "D:\\Bharani\\Projects\\testpipeline\\appdeploy\\" 
                     bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")  
                   /*  def util = load("myfile.groovy") */
+                  /*  def jsont = load 'githubjson.groovy' */
                     code = load 'myfile.groovy'
                     code.example1()
                     code.example2() 
-                   def jsont = load 'githubjson.groovy'
+                 
                     
 
                                     
