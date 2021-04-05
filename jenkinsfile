@@ -3,7 +3,7 @@ pipeline {
         label 'WindowsNode'
 
     }
-       
+       def code
     stages {
         stage('Checkout') {
             steps {
@@ -64,18 +64,11 @@ pipeline {
                     dstStream.close()    
                     */ 
                  }   
-                 code.example2()                             
+                                          
             } 
                                       
         } 
-        stage {
-            script {
-
-                code.example2()
-            }
-        }
-        
-                    
+             
     }
-         
+    code.example2()       
 } 
