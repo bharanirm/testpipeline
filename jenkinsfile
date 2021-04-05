@@ -68,7 +68,7 @@ pipeline {
             } 
                                       
         } 
-        stage{
+        stage {
             script {
 
                 code.example2()
