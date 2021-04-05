@@ -1,9 +1,10 @@
 pipeline {
+      def code
     agent {
         label 'WindowsNode'
 
     }
-       def code
+     
     stages {
         stage('Checkout') {
             steps {
