@@ -18,7 +18,7 @@ pipeline {
             /* agent { label 'WindowsNode' } */
             steps {
                script {
-
+                    
                    def fields = env.getEnvironment()
                    fields.each {
                         key, value -> println("${key} = ${value}");
@@ -32,12 +32,16 @@ pipeline {
         stage('Copy Files'){                         
             steps{  
                 script{  
+                    def jsont 
                     def sourceFolder = "D:\\Bharani\\Projects\\testpipeline\\app\\"
                     def destinationFolder = "D:\\Bharani\\Projects\\testpipeline\\appdeploy\\" 
                     bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")  
                   /*  def util = load("myfile.groovy") */
                     code = load 'myfile.groovy'
                     code.example1()
+                    jsont = load 'githubjson.groovy'
+                    
+
                                     
                 /*  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir") */
                  /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
