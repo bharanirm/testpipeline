@@ -1,6 +1,6 @@
-def code
+
 pipeline {
-     
+     def code
     agent {
         label 'WindowsNode'
 
@@ -25,21 +25,22 @@ pipeline {
                     }
  
                     println(env.PATH)
-                    code.example2() 
+                    
                }
             }
         }
         stage('Copy Files'){                         
             steps{  
                 script{  
-                    def jsont 
+                    
                     def sourceFolder = "D:\\Bharani\\Projects\\testpipeline\\app\\"
                     def destinationFolder = "D:\\Bharani\\Projects\\testpipeline\\appdeploy\\" 
                     bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")  
                   /*  def util = load("myfile.groovy") */
                     code = load 'myfile.groovy'
                     code.example1()
-                    jsont = load 'githubjson.groovy'
+                    code.example2() 
+                   def jsont = load 'githubjson.groovy'
                     
 
                                     
