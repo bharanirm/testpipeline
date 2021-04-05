@@ -76,7 +76,7 @@ pipeline {
             } 
                                       
         } 
-        stage {
+        stage ('Call Groovy Script') {
             steps {
             script {
                 code.example2() 
