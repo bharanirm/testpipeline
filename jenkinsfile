@@ -68,6 +68,12 @@ pipeline {
             } 
                                       
         } 
+        stage{
+            script {
+
+                code.example2()
+            }
+        }
         
                     
     }
