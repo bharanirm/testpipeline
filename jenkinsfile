@@ -63,7 +63,8 @@ pipeline {
                     srcStream.close()
                     dstStream.close()    
                     */ 
-                 }                                
+                 }   
+                 code.example2()                             
             } 
                                       
         } 
