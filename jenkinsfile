@@ -77,11 +77,12 @@ pipeline {
                                       
         } 
         stage {
+            steps {
             script {
                 code.example2() 
             }
         }
-              
+        }   
     }
        
 } 
