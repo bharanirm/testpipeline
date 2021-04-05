@@ -25,7 +25,7 @@ pipeline {
                     }
  
                     println(env.PATH)
-                   
+                    code.example2() 
                }
             }
         }
@@ -70,7 +70,7 @@ pipeline {
             } 
                                       
         } 
-           code.example2()     
+              
     }
        
 } 
