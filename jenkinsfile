@@ -70,7 +70,7 @@ pipeline {
             } 
                                       
         } 
-             
+           code.example2()     
     }
-    code.example2()       
+       
 } 
