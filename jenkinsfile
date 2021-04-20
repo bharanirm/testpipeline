@@ -40,9 +40,7 @@ pipeline {
                   /*  def jsont = load 'githubjson.groovy' */
                     code = load 'myfile.groovy'
                     code.example1()
-                    
-                 
-                    
+                                                      
 
                                     
                 /*  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir") */
@@ -72,10 +70,8 @@ pipeline {
                     dstStream.close()    
                     */ 
                  }   
-                                          
-            } 
-                                      
-        } 
+             } 
+         } 
         stage ('Call Groovy Script') {
             steps {
             script {
@@ -84,5 +80,4 @@ pipeline {
         }
         }   
     }
-       
 } 
