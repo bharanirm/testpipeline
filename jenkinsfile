@@ -25,6 +25,7 @@ pipeline {
                     }
  
                     println(env.PATH)
+                    println(env.BUILD_ID)
 
                     
                }
