@@ -9,42 +9,35 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-               
+               echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                     git url: 'https://github.com/bharanirm/testpipeline.git', branch: 'master', credentialsId: '6153a06b50ce4c3cf2b0317abcb88c92e8a4adb4'
-                       
-            }
+           }
         }
         stage('Env Testing') {
             /* agent { label 'WindowsNode' } */
             steps {
                script {
-                    
                    def fields = env.getEnvironment()
                    fields.each {
                         key, value -> println("${key} = ${value}");
                     }
- 
-                    println(env.PATH)
-                    echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-
-                    
+                     println(env.PATH)
                }
             }
         }
         stage('Copy Files'){                         
             steps{  
                 script{  
-                    
+                    echo "Deployment in Progress..."
                     def sourceFolder = "D:\\Bharani\\Projects\\testpipeline\\app\\"
                     def destinationFolder = "D:\\Bharani\\Projects\\testpipeline\\appdeploy\\" 
                     bat("ROBOCOPY ${sourceFolder} ${destinationFolder} /mir")  
                   /*  def util = load("myfile.groovy") */
                   /*  def jsont = load 'githubjson.groovy' */
+                    echo "Deployment Completed."
                     code = load 'myfile.groovy'
                     code.example1()
-                                                      
-
-                                    
+                                
                 /*  bat("ROBOCOPY D:\\Bharani\\Projects\\gitjenkins\\app\\ D:\\Bharani\\Projects\\gitjenkins\\appdeploy\\ /mir") */
                  /*  File sourceFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app");
                     File  destinationFolder = new File("D:\\Bharani\\Projects\\gitjenkins\\app\\appdeploy");                                                   
