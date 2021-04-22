@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}")
                     git url: 'https://github.com/bharanirm/testpipeline.git', branch: 'master', credentialsId: '6153a06b50ce4c3cf2b0317abcb88c92e8a4adb4'
                        
             }
@@ -25,6 +25,7 @@ pipeline {
                     }
  
                     println(env.PATH)
+
                     
                }
             }
