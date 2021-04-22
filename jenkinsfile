@@ -77,9 +77,9 @@ pipeline {
     }
     post {
     success {
-            build job: 'Test Pipeline', 
-                  parameters: [
-                  string(name: 'passed_build_number_param', value: String.valueOf(currentBuild.number))
+        build job: 'build',parameters: [string(name: 'Project_Name', value: 'test3'), 
+                    string(name: 'Environment_Name', value: 'Dev_Env_1')]
+            
                   }
       failure {
         when {
