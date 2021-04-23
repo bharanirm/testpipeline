@@ -75,9 +75,9 @@ pipeline {
         }
         }   
     }
-    post {
+   /* post {
     success {
-        build job: 'build',parameters: [string(name: 'Project_Name', value: 'test3'), 
+          build job: 'testpipeline',parameters: [string(name: 'Project_Name', value: 'test3'), 
                     string(name: 'Environment_Name', value: 'Dev_Env_1')]
             
                   }
@@ -92,5 +92,5 @@ pipeline {
          body: """BUILD FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':\n\nCheck console output at ${env.BUILD_URL}""",
          to: 'bharani@hotmail.com')
       }
-    }
+    } */
 } 
