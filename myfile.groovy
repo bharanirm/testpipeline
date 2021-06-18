@@ -11,6 +11,7 @@ def example2() {
   println("Hellow World")
   println("I'm Good")
   println("How are you")
+  println("How are you")
 }
 
 return this
